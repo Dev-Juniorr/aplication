@@ -1,0 +1,220 @@
+.log {
+    background-color: #39439d;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+}
+
+.logo img {
+    margin-top: 10px;
+    width: 80px;
+    position: relative;
+    top: 10px;
+}
+
+.register {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px 30px 0 0;
+    z-index: 10;
+    padding: 10px 20px 0 20px;
+}
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #39439d;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+label {
+    color: rgb(18, 18, 18);
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+span {
+    color: #39439d;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+input::placeholder {
+    color: rgb(180, 180, 180);
+}
+
+.inputs input {
+    background-color: rgb(238, 238, 238);
+    color: #333;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 10px;
+    outline: none;
+}
+
+.inputs .icon {
+    position: absolute;
+    right: 15px;
+    top: 45%;
+    color: rgb(129, 129, 129);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 14px;
+    color: rgb(153, 153, 153);
+  }
+  
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: rgb(178, 178, 178);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.button {
+    border: none;
+    border-radius: 10px;
+    background-color: #39439d;
+    color: #fff;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #4855ca;
+}
+
+.button_2 {
+    border: none;
+    border: solid 1px #39439d;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #39439d;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.button_2:hover {
+    background-color: #ececec;
+}
+
+.button_2 img {
+    width: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+}
+
+.o {
+    margin: 10px 0 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    color: rgb(132, 132, 132);
+}
+
+.line {
+    width: 100%;
+    height: 15px;
+    border-bottom: 1px solid rgb(156, 156, 156);
+}
+
+.or {
+    margin: 0 10px 0 10px;
+}
+
+.create {
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(140, 140, 140);
+}
