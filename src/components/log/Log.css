@@ -11,6 +11,24 @@
     z-index: 10;
 }
 
+.log.desactive {
+    animation: desactive ease;
+    transition: all 1s ease;
+    transform: translateX(-100%);
+    z-index: 100;
+}
+
+@keyframes desactive {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(0%);
+        display: none;
+    }
+}
+
 .logo img {
     margin-top: 10px;
     width: 80px;
@@ -161,6 +179,7 @@ input::placeholder {
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
+    outline: none;
 }
 
 .button:hover {
@@ -180,6 +199,7 @@ input::placeholder {
     transition: all 0.3s ease;
     cursor: pointer;
     margin-bottom: 15px;
+    outline: none;
 }
 
 .button_2:hover {
@@ -217,4 +237,53 @@ input::placeholder {
     font-weight: 500;
     font-size: 15px;
     color: rgb(140, 140, 140);
+}
+
+.terms {
+    color: red;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+}
+
+.terms.error {
+    display: block;
+}
+
+.nameInput {
+    transition: all 0.3s ease;
+    border: 0px;
+}
+
+.emailInput {
+    transition: all 0.3s ease;
+    border: 0px;
+}
+
+.passwordInput {
+    transition: all 0.3s ease;
+    border: 0px;
+}
+
+/* ERRORES */
+.nameInput.error {
+    border-bottom: 1px solid rgba(255, 0, 0, 0.58);
+    background-color: rgba(255, 0, 0, 0.116);
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+}
+
+.emailInput.error {
+    border-bottom: 1px solid rgba(255, 0, 0, 0.58);
+    background-color: rgba(255, 0, 0, 0.116);
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+}
+
+.passwordInput.error {
+    border-bottom: 1px solid rgba(255, 0, 0, 0.58);
+    background-color: rgba(255, 0, 0, 0.116);
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
 }
