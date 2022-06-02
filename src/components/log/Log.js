@@ -65,7 +65,7 @@ const Log = () => {
 
             function myGreeting() {
                 check && datos.name && datos.email && datos.password && datos.password.length > 5 ? log.classList.add('desactive') : log.classList.remove('desactive');
-                window.location.href = '/home';
+                window.location.href = 'home';
           }
 
           setTimeout(time, 2000);
