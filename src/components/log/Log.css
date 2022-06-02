@@ -89,7 +89,7 @@ input::placeholder {
 .inputs .icon {
     position: absolute;
     right: 15px;
-    top: 45%;
+    transform: translateY(120%);
     color: rgb(129, 129, 129);
     font-size: 20px;
     cursor: pointer;
@@ -182,8 +182,74 @@ input::placeholder {
     outline: none;
 }
 
+.button.desactive {
+    display: none;
+}
+
 .button:hover {
     background-color: #4855ca;
+}
+
+.buttonSpinner {
+    border: none;
+    border-radius: 10px;
+    background-color: #39439d;
+    color: #fff;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+.buttonSpinner.active {
+    display: block;
+    background-color: #39439d9c;
+    pointer-events: none;
+}
+
+.buttonIcon {
+    border: none;
+    border-radius: 10px;
+    background-color: #89e455;
+    color: #fff;
+    width: 100%;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+.buttonIcon.active {
+    display: block;
+}
+
+.spinner {
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: transparent;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .button_2 {
@@ -251,6 +317,18 @@ input::placeholder {
     display: block;
 }
 
+.min {
+    color: red;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+}
+
+.min.error {
+    display: block;
+}
+
 .nameInput {
     transition: all 0.3s ease;
     border: 0px;
@@ -286,4 +364,12 @@ input::placeholder {
     background-color: rgba(255, 0, 0, 0.116);
     border-radius: 5px 5px 0 0;
     transition: all 0.3s ease;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.icon.active {
+    display: block;
 }

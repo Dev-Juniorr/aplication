@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Log.css';
 
 // Importaciones de Iconos
-import {FaEye, FaEyeSlash} from 'react-icons/fa';
+import {FaEye, FaEyeSlash, FaCheck} from 'react-icons/fa';
 
 const Log = () => {
 
@@ -36,22 +36,44 @@ const Log = () => {
         const emailInput = document.querySelector('.emailInput');
         const passwordInput = document.querySelector('.passwordInput');
         const terms = document.querySelector('.terms');
+        const min = document.querySelector('.min');
+        const buttonSpinner = document.querySelector('.buttonSpinner');
+        const button = document.querySelector('.button');
+        const buttonIcon = document.querySelector('.buttonIcon');
 
         const check = document.getElementById('check').checked;
         const log = document.querySelector('.log');
+
+        
 
         check ? terms.classList.remove('error') : terms.classList.add('error');
 
         datos.name === '' ? nameInput.classList.add('error') : nameInput.classList.remove('error'); localStorage.setItem('name', name);
 
         datos.email === '' ? emailInput.classList.add('error') : emailInput.classList.remove('error'); localStorage.setItem('email', email);
-        
-        datos.password === '' ? passwordInput.classList.add('error') : localStorage.setItem('password',password); datos.password.length < 7 ? passwordInput.classList.add('error') : passwordInput.classList.remove('error');
 
-        check && datos.name && datos.email && datos.password ? log.classList.add('desactive') : log.classList.remove('desactive')
+        datos.password.length < 6 ? min.classList.add('error') : min.classList.remove('error');
+        
+        datos.password === '' ? passwordInput.classList.add('error') : localStorage.setItem('password',password); datos.password.length < 6 ? passwordInput.classList.add('error') : passwordInput.classList.remove('error');
 
-        
-        
+
+        if(check && datos.name && datos.email && datos.password && datos.password.length > 5){
+            buttonSpinner.classList.add('active')
+            button.classList.add('desactive');
+
+            setTimeout(myGreeting, 3000);
+
+            function myGreeting() {
+                check && datos.name && datos.email && datos.password && datos.password.length > 5 ? log.classList.add('desactive') : log.classList.remove('desactive');
+          }
+
+          setTimeout(time, 2000);
+
+            function time(){
+                buttonSpinner.classList.remove('active');
+                buttonIcon.classList.add('active')
+            }
+        }
     }
  
   return (
@@ -83,6 +105,7 @@ const Log = () => {
                             state  ? <FaEyeSlash/> : <FaEye/> 
                         }
                     </span>
+                    <p className='min'>Min 6 characters</p>
                 </div>
 
                 <label className="container">
@@ -92,7 +115,17 @@ const Log = () => {
                 </label>
                 <p className='terms'>Please accept terms & Conditions</p>
 
-                <button className='button' type='submit'>Create Account</button>
+                <button className='button' type='submit'>
+                    Create Account
+                </button>
+
+                <button className='buttonSpinner'>
+                    <div className='spinner'></div>
+                </button>
+
+                <button className='buttonIcon'>
+                    <div className='icon'>{<FaCheck/>}</div>
+                </button>
 
             </form>
                 <div className='o'>
