@@ -1,10 +1,10 @@
 import React from 'react'
-import Start from './components/start/Start';
+import AppRouters from './components/routers/AppRouters';
 
 const App = () => {
   return (
     <>
-      <Start/>
+      <AppRouters/>
     </>
   )
 }
